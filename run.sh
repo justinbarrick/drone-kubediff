@@ -1,7 +1,12 @@
 #!/bin/sh
 
 function slack_notify {
-    curl -so /dev/null "$SLACK_URL" --data "$(cat "$1" |jq -Rs \
+    MESSAGE="$(cat "$1")"
+    if [ -z "$MESSAGE" ]; then
+        MESSAGE="No changes detected!"
+    fi
+
+    curl -so /dev/null "$SLACK_URL" --data "$(echo "$MESSAGE" |jq -Rs \
       --arg drone_build "$DRONE_BUILD_LINK" --arg color "#3CC7F3" \
       --arg channel $SLACK_CHANNEL --arg emoji $SLACK_EMOJI '{
         "channel": $channel,
