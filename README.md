@@ -3,6 +3,8 @@ the expected changes from a directory of kubernetes manifests when applied to yo
 
 It will output expected changes to the build log and, optionally, to a Slack channel.
 
+![kubediff](https://i.imgur.com/osbte5j.png)
+
 # Setup
 
 To use, add it to your `.drone.yml`:
