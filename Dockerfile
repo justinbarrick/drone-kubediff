@@ -1,4 +1,4 @@
-FROM weaveworks/kubediff:latest
+FROM justinbarrick/kubediff:latest
 
 RUN apk update && apk add jq
 
