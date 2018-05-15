@@ -12,7 +12,7 @@ To use, add it to your `.drone.yml`:
 ```
 pipeline:
   kubediff:
-    image: justinbarrick/drone-kubediff:master-f2dd458
+    image: justinbarrick/drone-kubediff:master-e074dc4
     secrets: [K8S_CA, K8S_API_URL, K8S_USER, K8S_TOKEN]
     manifest_directory: ./manifests/
     slack_url: https://hooks.slack.com/services/WEBHOOK_URL
